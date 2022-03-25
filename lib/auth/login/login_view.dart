@@ -4,7 +4,7 @@ import 'package:loginuibloc/auth/auth_repository.dart';
 import 'package:loginuibloc/auth/login/login_event.dart';
 import 'package:loginuibloc/auth/login/login_state.dart';
 
-import '../../form_submission_status.dart';
+import '../form_submission_status.dart';
 import 'login_block.dart';
 
 class LoginView extends StatelessWidget {
@@ -17,7 +17,13 @@ class LoginView extends StatelessWidget {
         create: (context) => LoginBloc(
           authRepo: context.read<AuthRepository>(),
         ),
-        child: _loginForm(),
+        child: Stack(
+          alignment: Alignment.bottomCenter,
+          children: [
+            _loginForm(),
+            _showSignUpButton(),
+          ],
+        ),
       ),
     );
   }
@@ -99,6 +105,15 @@ class LoginView extends StatelessWidget {
                 child: const Text('Login'),
               );
       },
+    );
+  }
+
+  Widget _showSignUpButton() {
+    return SafeArea(
+      child: TextButton(
+        child: Text('Don\'t have an account? Sign up.'),
+        onPressed: () {},
+      ),
     );
   }
 

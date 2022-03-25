@@ -5,4 +5,6 @@ class AuthRepository {
     print('logged in ');
     throw Exception('failed login');
   }
+
+  attemptAutoLogin() {}
 }

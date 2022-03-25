@@ -3,7 +3,7 @@ import 'package:loginuibloc/auth/auth_repository.dart';
 import 'package:loginuibloc/auth/login/login_event.dart';
 import 'package:loginuibloc/auth/login/login_state.dart';
 
-import '../../form_submission_status.dart';
+import '../form_submission_status.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final AuthRepository authRepo;
